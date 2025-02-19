@@ -172,6 +172,8 @@ button:focus {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .hero-title {
@@ -230,13 +232,22 @@ button:focus {
   width: calc((100% - 24px * 3) / 4);
 }
 
+.svg-icon {
+  padding: 24px 100px;
+  border: 1px solid #8e8f99;
+  border-radius: 4px;
+  width: 264px;
+  height: 112px;
+  background: #f4f4fd;
+}
+
 .features-list-title {
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
   letter-spacing: 0.02em;
   color: #2e2f42;
-  margin-bottom: 8px;
+  margin: 8px 0;
 }
 
 .features-list-text {
@@ -304,18 +315,19 @@ button:focus {
   letter-spacing: 0.02em;
 }
 
-.social-media {
+.social-media.list {
   display: flex;
   justify-content: center;
   column-gap: 16px;
+  padding: 8px 16px 0 16px;
 }
 
 .social-media-link {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background-color: #4d5ae5;
 }
@@ -366,11 +378,41 @@ button:focus {
   row-gap: 48px;
 }
 
+.thumb {
+  position: relative;
+  overflow: hidden;
+}
+
+.overlay {
+  padding: 8px;
+  background-color: #4d5ae5;
+  color: #f4f4fd;
+  font-family: sans-serif;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(100%);
+  transition: transform 250ms ease-in-out;
+}
+
+.portfolio-list-item:hover .overlay {
+  transform: translateY(0);
+}
+
 .name-type {
   padding: 32px 16px;
   border-bottom: 1px solid #e7e9fc;
   border-left: 1px solid #e7e9fc;
   border-right: 1px solid #e7e9fc;
+}
+
+.portfolio-list-item:hover .name-type,
+.name-type:hover .name-type {
+  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+  background: #fff;
 }
 
 .portfolio-list-title {
@@ -401,7 +443,6 @@ button:focus {
 .footer-text {
   color: #f4f4fd;
   letter-spacing: 0.02em;
-  width: 264px;
 }
 
 .social-list {
@@ -414,8 +455,8 @@ button:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background-color: #4d5ae5;
 }
@@ -427,4 +468,21 @@ button:focus {
 .social-list-link:hover,
 .social-list-link:focus {
   background-color: #31d0aa;
+}
+
+.footer-content {
+  display: flex;
+  gap: 120px;
+}
+
+.social-list-title {
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.logo-text {
+  width: 264px;
+  height: 112px;
 }
